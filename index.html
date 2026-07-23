@@ -84,6 +84,12 @@
   .btn.gal{background:#b7791f}
   .btn.gal:hover{background:#975a16}
 
+  .evaluacion{margin-top:22px;border-top:1px dashed var(--borde);padding-top:18px}
+  .evaluacion h3{font-size:1rem;color:var(--azul);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .evaluacion h3::before{content:"";width:10px;height:10px;border-radius:3px;background:#2f855a;display:inline-block}
+  .evaluacion img{max-width:360px;width:100%;border:1px solid var(--borde);border-radius:10px;cursor:zoom-in;transition:.2s;box-shadow:0 2px 8px rgba(0,0,0,.06);display:block}
+  .evaluacion img:hover{box-shadow:0 8px 20px rgba(0,0,0,.16);transform:translateY(-2px)}
+
   .galeria{margin-top:20px}
   .galeria h3{font-size:1rem;color:var(--azul);margin-bottom:12px;padding-left:2px}
   .grid-img{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
@@ -137,6 +143,7 @@
     <p class="lead">Portafolio de evidencias del curso · Unidades 1 a 5</p>
     <div class="meta">
       <span class="chip"><strong>Alumno:</strong> Julio César Poblano Vázquez</span>
+      <span class="chip"><strong>Docente:</strong> Martin Hilarión Cadena Tecayehuatl</span>
       <span class="chip"><strong>Carrera:</strong> Ingeniería Industrial</span>
       <span class="chip"><strong>Instituto Tecnológico de Puebla</strong></span>
     </div>
@@ -182,6 +189,10 @@
         <a class="btn" href="UNIDAD 1/U1-Ev2-Exposicion.pdf" target="_blank">Ver documento</a>
       </div>
     </div>
+    <div class="evaluacion">
+      <h3>Evaluación</h3>
+      <img src="UNIDAD 1/U1-Evaluacion.png" alt="Evaluación Unidad 1" loading="lazy" onclick="lbSingle(this.getAttribute('src'),'Evaluación · Unidad 1')">
+    </div>
   </section>
 
   <section class="unidad" id="u2">
@@ -212,6 +223,10 @@
       <h3>Capturas del Simulador</h3>
       <div class="grid-img" data-gal="sim"></div>
     </div>
+    <div class="evaluacion">
+      <h3>Evaluación</h3>
+      <img src="UNIDAD 2/U2-Evaluacion.png" alt="Evaluación Unidad 2" loading="lazy" onclick="lbSingle(this.getAttribute('src'),'Evaluación · Unidad 2')">
+    </div>
   </section>
 
   <section class="unidad" id="u3">
@@ -232,6 +247,10 @@
         <a class="btn" href="UNIDAD 3/U3-Ev8-Exposicion.pdf" target="_blank">Ver documento</a>
       </div>
     </div>
+    <div class="evaluacion">
+      <h3>Evaluación</h3>
+      <img src="UNIDAD 3/U3-Evaluacion.png" alt="Evaluación Unidad 3" loading="lazy" onclick="lbSingle(this.getAttribute('src'),'Evaluación · Unidad 3')">
+    </div>
   </section>
 
   <section class="unidad" id="u4">
@@ -251,6 +270,10 @@
         <span class="titulo">Exposición</span>
         <a class="btn" href="UNIDAD 4/U4-Ev11-Exposicion.pdf" target="_blank">Ver documento</a>
       </div>
+    </div>
+    <div class="evaluacion">
+      <h3>Evaluación</h3>
+      <img src="UNIDAD 4/U4-Evaluacion.png" alt="Evaluación Unidad 4" loading="lazy" onclick="lbSingle(this.getAttribute('src'),'Evaluación · Unidad 4')">
     </div>
   </section>
 
@@ -368,6 +391,12 @@
     }
   });
 
+  function lbSingle(src, cap){
+    actual.lista = [{src:src, cap:cap}];
+    actual.i = 0;
+    lbShow();
+    document.getElementById('lb').classList.add('on');
+  }
   function lbOpen(galKey, idx){
     var g = galerias[galKey];
     actual.lista = [];
